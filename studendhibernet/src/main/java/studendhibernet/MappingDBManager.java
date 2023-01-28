@@ -8,6 +8,12 @@ public class MappingDBManager {
 	public static void main(String[] args) {
 //		onetoonesave();
 		onetomanysave();
+		manytomanysave();
+	}
+
+	private static void manytomanysave() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private static void onetomanysave() {
