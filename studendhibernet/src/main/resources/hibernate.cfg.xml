@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hibernet configeration -->
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+<!-- database connection -->
+<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+<property name="connection.url">jdbc:mysql://localhost:3306/hiber</property>
+<property name="connection.username">root</property>
+<property name="connection.password">WCISmy@1234</property>
+<property name="show_sql">true</property>
+<property name="hibernate.hbm2ddl.auto">update</property>
+
+<mapping  class="studendhibernet.Student"/>
+<mapping  class="studendhibernet.Address"/>
+<mapping  class="studendhibernet.Department"/>
+	</session-factory>
+</hibernate-configuration>
