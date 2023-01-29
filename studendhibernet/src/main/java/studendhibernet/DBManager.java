@@ -73,5 +73,5 @@ static Session getSession(){
 	Session session=cnfg.buildSessionFactory().openSession();	
 	
 	return session;
-}
+	}
 }

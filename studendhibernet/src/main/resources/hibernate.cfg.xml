@@ -15,5 +15,6 @@
 <mapping  class="studendhibernet.Student"/>
 <mapping  class="studendhibernet.Address"/>
 <mapping  class="studendhibernet.Department"/>
+<mapping  class="studendhibernet.Project"/>
 	</session-factory>
 </hibernate-configuration>

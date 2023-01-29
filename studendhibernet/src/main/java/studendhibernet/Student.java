@@ -1,8 +1,16 @@
 package studendhibernet;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -27,8 +35,8 @@ public class Student {
 	}
 	
 
-
-	@OneToOne
+//delete all related
+	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	Address address;
 	public Address getAddress() {
 		return address;
@@ -44,5 +52,18 @@ public class Student {
 	}
 	public void setDeparment(Department deparment) {
 		this.deparment = deparment;
+	}
+	
+	@ManyToMany
+	@JoinTable(
+			name="student_project",
+			joinColumns= {@JoinColumn(name="student_id")},
+			inverseJoinColumns= {@JoinColumn(name="project_id")})
+	Set<Project> projects=new HashSet<Project>();
+	public Set<Project> getProjects() {
+		return projects;
+	}
+	public void setProjects(Set<Project> projects) {
+		this.projects = projects;
 	}
 }
